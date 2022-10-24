@@ -19,6 +19,30 @@ const UserSchema = new Schema({
 		trim: true,
 		required: true,
 		minlength: 6
+	},
+	usuario: {
+		type: String,
+		trim: true,
+		required: true,
+		unique: true
+	},
+	cpf: {
+		type: String,
+		trim: true,
+		required: true,
+		minlength: 11,
+		unique: true
+	},
+	telefone: {
+		type: String,
+		trim: true,
+		required: true,
+		minlength: 11,
+		unique: true
+	},
+	endereco: {
+		type: String,
+		required: true
 	}
 });
 

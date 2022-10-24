@@ -13,6 +13,10 @@ export default {
         let senhaFiltro = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
 		let email = req.body.email;
 		let senha = req.body.senha;
+		let usuario = req.body.usuario;
+		let cpf = req.body.cpf;
+		let telefone = req.body.telefone;
+		let endereco = req.body.endereco;
 
 		if(email ==='' && senha === ''){
 			res.status(500).json({message: "Nenhum email nem senha foram inseridos"});
@@ -28,7 +32,7 @@ export default {
 			res.status(500).json({message: "A senha inserida não atende aos requisitos"});
 		  }else{					
 				try{
-					userModel.create({ email: email, senha: senha }, function () {
+					userModel.create({ email: email, senha: senha, usuario: usuario, cpf: cpf, telefone: telefone, endereco: endereco }, function () {
 						res.status(200).json({status: "Sucesso", message: "usuário cadastrado com sucesso"});	
 		  			});
 				}catch{
@@ -91,7 +95,6 @@ export default {
 		  }else if(!senhaFiltro.test(senha)){
 			res.status(500).json({message: "Usuário ou senha inválidos. Tente novamente!"});
 		  }else{
-
 		userModel.findOne({email:req.body.email}, function(err, userInfo){
 					try{
 						if(userInfo != null && bcrypt.compareSync(senha, userInfo.senha)) {
