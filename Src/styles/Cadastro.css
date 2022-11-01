@@ -1,0 +1,119 @@
+.BodyCadastro {
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(180deg, #33383D 0%, #1C1D20 100%);
+}
+
+.cadastroContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 90%;
+}
+
+#usuarioLabel {
+    font-size: 2rem;
+    color: white;
+}
+
+#usuarioInput {
+    width: 30%;
+    border-radius: 10px;
+    height: 15%;
+    margin-bottom: 3px;
+}
+
+#senhaLabel {
+    font-size: 2rem;
+    color: white;
+}
+
+#senhaInput {
+    width: 30%;
+    border-radius: 10px;
+    height: 15%;
+    margin-bottom: 3px;
+}
+
+#emailLabel {
+    font-size: 2rem;
+    color: white;
+}
+
+#emailInput {
+    width: 30%;
+    border-radius: 10px;
+    height: 15%;
+    margin-bottom: 3px;
+}
+#cpfLabel {
+    font-size: 2rem;
+    color: white;
+}
+
+#cpfInput {
+    width: 30%;
+    border-radius: 10px;
+    height: 15%;
+    margin-bottom: 3px;
+}
+#telefoneLabel {
+    font-size: 2rem;
+    color: white;
+}
+
+#telefoneInput {
+    width: 30%;
+    border-radius: 10px;
+    height: 15%;
+    margin-bottom: 3px;
+}
+
+#enderecoLabel {
+    font-size: 2rem;
+    color: white;
+}
+
+#enderecoInput {
+    width: 30%;
+    border-radius: 10px;
+    height: 15%;
+    margin-bottom: 3px;
+}
+
+
+#botaoCadastro {
+    width: 20vw;
+    border-radius: 10px;
+    height: 7vh;
+    cursor: pointer;  
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;  
+}
+
+#botaoCadastro:hover {
+    size: 7px;
+    border: none;       
+}
+
+.termosUsoBox{
+margin-top: 20px;
+}
+
+#spanTermosUso{
+    margin-bottom: 10px;
+    color: white;
+    font-size: 1.3rem;
+}
+#termosUso {
+    margin-bottom: 10px;
+    color: white;
+    font-size: 1.3rem;
+}
