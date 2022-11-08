@@ -1,8 +1,8 @@
 async function SalvarBanco(){
-
+ 
     let btn = document.querySelector(".cadastroContainer");
-    btn.addEventListener('click', function(btnLogin){
-        btnLogin.preventDefault();
+    btn.addEventListener('click', function(btnCadastro){
+        btnCadastro.preventDefault();
     });
 
     let emailFiltro = /^.+@.+\..{2,}$/;
@@ -20,16 +20,22 @@ async function SalvarBanco(){
     let telefone = telefoneInput.value;
     let endereco = enderecoInput.value;
 
-    if(email ==='' && senha === ''){
+    if(email ==='' && senha ==='' && cpf ==='' && telefone ==='' && endereco ===''){
         emailInput.style.background = "yellow"
         senhaInput.style.background = "yellow"
         cpfInput.style.background = "yellow";
         telefoneInput.style.background = "yellow";
         enderecoInput.style.background ="yellow"
     }else if(email === ''){ 
-        emailInput.style.background = "yellow"
+      emailInput.style.background = "yellow"
     }else if(senha === ''){
-        senhaInput.style.background = "yellow"
+      senhaInput.style.background = "yellow"
+    }else if(cpf === ''){
+      cpfInput.style.background = "yellow";
+    }else if(telefone === ''){
+      telefoneInput.style.background = "yellow";
+    }else if(endereco === ''){
+      enderecoInput.style.background ="yellow"
     }else if (!emailFiltro.test(email) && !senhaFiltro.test(senha)) {
         emailInput.style.background = "yellow"
         senhaInput.style.background = "yellow"
@@ -40,6 +46,7 @@ async function SalvarBanco(){
     }else{     
     
       try{
+        console.log("x")
             const rawResponse = await fetch("http://localhost:8080/users/registrar", {
               method: "POST",
               headers: {
