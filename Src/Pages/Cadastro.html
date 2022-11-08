@@ -6,29 +6,25 @@
     <title>Cadastro</title>
 </head>
 <body class="BodyCadastro">
-    <div class="cadastroContainer">
-        <label for="usuarioInput" id="usuarioLabel">Usuário</label>
-        <input type="text" id="usuarioInput" name="password">
-        <label for="senhaInput" id="senhaLabel">Senha</label>
-        <input type="text" id="senhaInput" name="senha">
+    <form class="cadastroContainer">   
         <label for="emailInput" id="emailLabel">Email</label>
         <input type="text" id="emailInput" name="email">
+        <label for="senhaInput" id="senhaLabel">Senha</label>
+        <input type="text" id="senhaInput" name="senha">
         <label for="cpfInput" id="cpfLabel">CPF</label>
         <input type="text" id="cpfInput" name="cpf">
         <label for="telefoneInput" id="telefoneLabel">Telefone</label>
         <input type="text" id="telefoneInput" name="telefone">
         <label for="enderecoInput" id="enderecoLabel">Endereço</label>
         <input type="text" id="enderecoInput" name="endereco">
-        <a href="a.html" id="RefCadastro"> <button id="botaoCadastro">Cadastrar</button></a> 
+        <input id="botaoCadastro" type="submit" value="Cadastrar" onclick="SalvarBanco()">
         <div class="termosUsoBox">
             <input type="checkbox" id="termosCheckbox">
             <span id="spanTermosUso">Aceitar</span>
-            <a href="" id="termosUso">termos de uso</a>
-        </div>
-        
-        
-    </div>
+            <a href="termosUso.html" id="termosUso">termos de uso</a>
+        </div> 
+    </form>
 </body>
 
-<script type="module" src="Cadastro.js"></script>
+<script type="module" src="../js/cadastro.js"></script>
 </html>

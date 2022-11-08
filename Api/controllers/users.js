@@ -13,7 +13,6 @@ export default {
         let senhaFiltro = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
 		let email = req.body.email;
 		let senha = req.body.senha;
-		let usuario = req.body.usuario;
 		let cpf = req.body.cpf;
 		let telefone = req.body.telefone;
 		let endereco = req.body.endereco;
@@ -32,7 +31,7 @@ export default {
 			res.status(500).json({message: "A senha inserida não atende aos requisitos"});
 		  }else{					
 				try{
-					userModel.create({ email: email, senha: senha, usuario: usuario, cpf: cpf, telefone: telefone, endereco: endereco }, function () {
+					userModel.create({ email: email, senha: senha, cpf: cpf, telefone: telefone, endereco: endereco }, function () {
 						res.status(200).json({status: "Sucesso", message: "usuário cadastrado com sucesso"});	
 		  			});
 				}catch{
@@ -89,11 +88,11 @@ export default {
 		  }else if(senha === ''){
 			res.status(500).json({message: "Nenhuma senha foi inserida"}); 
 		  }else if (!emailFiltro.test(email) && !senhaFiltro.test(senha)) {
-			res.status(500).json({message: "Usuário ou senha inválidos. Tente novamente!"}); 
+			res.status(500).json({message: "Email ou senha inválidos. Tente novamente!"}); 
 		  }else if(!emailFiltro.test(email)){
-			res.status(500).json({message: "Usuário ou senha inválidos. Tente novamente!"});  
+			res.status(500).json({message: "Email ou senha inválidos. Tente novamente!"});  
 		  }else if(!senhaFiltro.test(senha)){
-			res.status(500).json({message: "Usuário ou senha inválidos. Tente novamente!"});
+			res.status(500).json({message: "Email ou senha inválidos. Tente novamente!"});
 		  }else{
 		userModel.findOne({email:req.body.email}, function(err, userInfo){
 					try{

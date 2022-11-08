@@ -20,12 +20,6 @@ const UserSchema = new Schema({
 		required: true,
 		minlength: 6
 	},
-	usuario: {
-		type: String,
-		trim: true,
-		required: true,
-		unique: true
-	},
 	cpf: {
 		type: String,
 		trim: true,

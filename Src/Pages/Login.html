@@ -6,15 +6,14 @@
     <title>Login</title>
 </head>
 <body class="BodyLogin">
-    <div class="loginContainer">
-        <label for="usuarioInput" id="usuarioLabel">Usuário</label>
-        <input type="text" id="usuarioInput" name="password">
-        <label for="senhaInput" id="senhaLabel">Senha</label>
-        <input type="text" id="senhaInput" name="senha">
-        <a href="a.html" id="RefLogin"> <button id="botaoLogin">Entrar</button></a>
-        <a href="" id="termosUso">Ler termos de uso</a>
+        <form class="loginContainer"> 
+            <label for="emailInput" id="emailLabel">Usuário</label>
+            <input type="text" id="emailInput" name="email">
+            <label for="senhaInput" id="senhaLabel">Senha</label>
+            <input type="text" id="senhaInput" name="senha">
+            <input type="submit" id="botaoLogin" value="Entrar" onclick="BuscaBanco()" >
     </div>
 </body>
 
-<script type="module" src="login.js"></script>
+<script src="../js/login.js"></script>
 </html>
