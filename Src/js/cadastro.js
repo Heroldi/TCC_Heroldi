@@ -55,6 +55,8 @@ async function SalvarBanco(){
         cpfInput.style.background = "yellow";
         telefoneInput.style.background = "yellow";
         enderecoInput.style.background ="yellow"
+    }else if(nome === ''){
+      nomeInput.style.background = "yellow"
     }else if(email === ''){ 
       emailInput.style.background = "yellow"
     }else if(senha === ''){

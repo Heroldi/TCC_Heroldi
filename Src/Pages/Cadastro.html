@@ -8,17 +8,17 @@
 <body class="BodyCadastro">
     <form class="cadastroContainer">   
         <label for="nomeInput" id="nomeLabel">Nome Completo</label>
-        <input type="text" id="nomeInput" name="nome">
+        <input type="text" id="nomeInput" name="nome" minlength="1" maxlength="150">
         <label for="emailInput" id="emailLabel">Email</label>
-        <input type="email" id="emailInput" name="email">
+        <input type="email" id="emailInput" name="email" maxlength="100" placeholder="ex: xxx@xx.xxx">
         <label for="senhaInput" id="senhaLabel">Senha</label>
-        <input type="password" id="senhaInput" name="senha">
+        <input type="password" id="senhaInput" name="senha" maxlength="6" minlength="6">
         <label for="cpfInput" id="cpfLabel">CPF</label>
-        <input oninput="mascaraCpf(this)" maxlength="14" type="text" id="cpfInput" name="cpf">
+        <input oninput="mascaraCpf(this)" minlength="14" maxlength="14" type="text" id="cpfInput" name="cpf" placeholder="ex: xxx.xxx.xxx-xx">
         <label for="telefoneInput" id="telefoneLabel">Telefone</label>
-        <input onkeyup="handlePhone(event)" maxlength="15" type="tel" id="telefoneInput" name="telefone">
-        <label for="enderecoInput" id="enderecoLabel">Endereço</label>
-        <input type="text" id="enderecoInput" name="endereco">
+        <input onkeyup="handlePhone(event)"minlength="15" maxlength="15" type="tel" id="telefoneInput" name="telefone" placeholder="ex: (xx) xxxxx-xxxx">
+        <label for="enderecoInput" id="enderecoLabel" >Endereço</label>
+        <input type="text" id="enderecoInput" name="endereco" minlength="1" maxlength="150">
         <input type="submit" id="botaoCadastro"  value="Cadastrar" onclick="SalvarBanco()">
         <div class="termosUsoBox">
             <input type="checkbox" id="termosCheckbox">
