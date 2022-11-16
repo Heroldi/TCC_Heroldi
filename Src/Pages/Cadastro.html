@@ -20,12 +20,41 @@
         <label for="enderecoInput" id="enderecoLabel" >Endereço</label>
         <input type="text" id="enderecoInput" name="endereco" minlength="1" maxlength="150">
         <input type="submit" id="botaoCadastro"  value="Cadastrar" onclick="SalvarBanco()">
-        <div class="termosUsoBox">
-            <input type="checkbox" id="termosCheckbox">
-            <span id="spanTermosUso">Aceitar</span>
-            <a href="termosUso.html" id="termosUso">termos de uso</a>
-        </div> 
+        <p onclick="openModal('modalBox')" class="termosUso">Termos de uso</p> 
     </form>
+
+    <div id="modalBox" class="modal">
+        <div class="termosContent">
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla arcu dolor, porttitor congue diam at, gravida hendrerit urna. Pellentesque fermentum consequat sapien eget euismod. Fusce non purus vel eros ornare accumsan. Integer pulvinar purus sit amet dui interdum egestas. In ut interdum lorem, eget suscipit velit. Integer ac rutrum dolor. Suspendisse pellentesque placerat accumsan. Duis interdum ut lacus ornare tincidunt. Nunc mollis, eros a interdum hendrerit, odio felis sollicitudin sem, quis vulputate nisi leo at lectus. Proin tempus nisi neque, et placerat dui elementum ut.
+
+                Proin ornare elit vitae lacus sagittis sodales. Quisque porta sollicitudin feugiat. Curabitur nec semper arcu. Praesent semper odio a augue laoreet consectetur. Sed finibus, nisl et sollicitudin lobortis, magna turpis egestas erat, ac hendrerit ex mi in lorem. Etiam porttitor sit amet mi viverra imperdiet. Praesent rutrum massa porta tincidunt ornare. Sed non laoreet tellus. Fusce non dapibus lectus. Sed et posuere felis. Morbi molestie id enim eget vestibulum. Cras et orci ut sapien pretium efficitur eget in lorem. Pellentesque tincidunt auctor euismod.
+                
+                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut volutpat pellentesque urna vitae eleifend. Nulla eget orci tincidunt, sodales massa non, semper risus. Vestibulum faucibus, quam in ornare condimentum, tortor ex laoreet tortor, nec aliquet odio quam sit amet tortor. Maecenas faucibus eros arcu, id auctor turpis ullamcorper et. Nulla viverra eget risus sit amet rutrum. Sed fringilla, tellus non laoreet auctor, nisl enim dignissim enim, vitae porta nibh nulla at erat. Nam euismod cursus lacus eu vulputate. Sed lobortis ac augue sit amet accumsan.
+                
+                Proin tempus nibh neque, commodo finibus libero sollicitudin ac. Vivamus ac nisl eu odio porta aliquet. Suspendisse a bibendum mauris, quis finibus enim. Sed at nisl tellus. Duis tellus est, ornare sit amet semper a, facilisis faucibus erat. Nulla quis purus eros. Sed quis luctus leo, in consectetur est. Nullam blandit fermentum suscipit. Etiam in urna dignissim, convallis tellus nec, viverra ex. Duis pulvinar vel velit nec elementum. Cras ac aliquet nisl. Nam mollis ac velit sed tempor. Nam mauris orci, pellentesque at ex non, elementum egestas est. Nam hendrerit ullamcorper lectus a blandit.
+                
+                Phasellus a neque urna. Sed mollis ut est eget facilisis. Sed consequat felis sed congue bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. In volutpat quis dui vel malesuada. Nam ut tincidunt ex. Nullam ac finibus erat. Duis laoreet urna elit, et congue justo hendrerit quis. Aenean sed lorem at elit sagittis imperdiet. Suspendisse fermentum metus vel odio vulputate, ut posuere turpis semper. Cras eget mauris velit. Quisque at finibus ligula. Donec nibh libero, ultricies nec efficitur eu, ullamcorper ac quam. Suspendisse potenti. Proin iaculis turpis sed commodo rhoncus. Duis id hendrerit ex.
+                
+                Aenean sed odio libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras viverra suscipit magna, sed rutrum arcu vestibulum nec. Maecenas pulvinar enim est, vel vestibulum lacus viverra ac. Mauris leo elit, mattis id ipsum sit amet, tempor fringilla nisl. Sed commodo purus quis sapien lobortis rutrum. Curabitur ut vehicula est. In sem massa, sodales vel volutpat in, blandit quis odio. Praesent ipsum erat, tempor at erat vel, consectetur aliquet nunc. Nullam non auctor dui. Quisque vel metus nibh. In auctor pharetra metus, nec condimentum dolor. Maecenas ut velit justo. Nunc quis bibendum magna.
+                
+                Vestibulum sollicitudin a orci nec lobortis. Sed sit amet ex eu velit consequat bibendum nec non felis. Aliquam at lobortis tortor. Maecenas dui quam, consectetur sed consequat sit amet, ultrices ut arcu. Ut in ante sit amet sapien eleifend porttitor sit amet ac nisl. Nulla tellus urna, euismod non sapien vel, dapibus rutrum erat. Praesent gravida turpis a risus dignissim semper. Sed mattis purus non condimentum efficitur.
+                
+                Proin viverra, est vitae interdum tincidunt, ante quam blandit ante, id interdum tortor nisl nec tortor. Aenean ac dolor eros. In id augue nec lectus viverra gravida vel in urna. Integer cursus lectus at purus varius, et dignissim magna lacinia. Vestibulum varius velit est, condimentum convallis metus auctor et. Suspendisse lacinia est non mauris laoreet facilisis. Duis sed fermentum lacus, eu pretium tellus.
+                
+                Maecenas velit dolor, sollicitudin in varius ut, eleifend id turpis. Duis convallis pharetra pharetra. Maecenas dignissim dignissim nibh. Fusce convallis, ante ut auctor blandit, velit risus convallis eros, vitae ultrices libero orci ut magna. Etiam efficitur vitae leo ut vulputate. Ut vehicula felis in auctor euismod. Aenean ultricies ac dui et egestas. Vestibulum eget efficitur risus, sed consectetur ligula. Donec consectetur ipsum ipsum, vitae tincidunt ligula elementum semper. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin maximus sem vel tristique sagittis. Pellentesque elementum velit sit amet ex accumsan porta. Curabitur eget magna at urna euismod faucibus. Vestibulum vel lacus sagittis, maximus neque vel, laoreet quam. Quisque auctor fringilla eros, a dictum leo vestibulum dignissim. In velit augue, ullamcorper vel faucibus ut, semper at enim.
+                
+                Sed massa purus, interdum sit amet eros vel, tincidunt scelerisque sem. Praesent lobortis, dolor id pellentesque varius, velit ipsum feugiat urna, a elementum mauris nibh non nisi. Vestibulum tempus mauris sit amet urna pellentesque, in efficitur justo venenatis. Aenean dictum ante dolor, sed fermentum nisl rutrum vitae. Aenean ultricies leo sed rhoncus dapibus. Suspendisse aliquam enim vel elit sollicitudin, non consequat mi bibendum. Morbi eget eros arcu. Suspendisse condimentum cursus neque, sed varius urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut ipsum et metus mollis scelerisque eget non odio. Duis mattis nisl scelerisque posuere</p>
+
+            <div class="textContent">
+                <input type="checkbox" id="termosCheckbox">
+                <span id="spanTermosUso">Aceitar termos de uso</span>  
+                <button class="btn" onclick="closeModal('modalBox')">Fechar</button> 
+            </div>
+        </div>
+              
+        </div>
+         
+    </div>
 </body>
 
 <script  src="../js/cadastro.js"></script>

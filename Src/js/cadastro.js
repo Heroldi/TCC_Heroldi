@@ -1,3 +1,22 @@
+function openModal(mn) {
+  let modal = document.getElementById(mn);
+
+  if (typeof modal == 'undefined' || modal === null)
+      return;
+
+  modal.style.display = 'Block';
+}
+
+function closeModal(mn) {
+  let modal = document.getElementById(mn);
+
+  if (typeof modal == 'undefined' || modal === null)
+      return;
+
+  modal.style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
 function mascaraCpf(numero){
    
   var valor = numero.value;
@@ -77,7 +96,6 @@ async function SalvarBanco(){
     }else{     
     
       try{
-        console.log("x")
             const rawResponse = await fetch("http://localhost:8080/users/registrar", {
               method: "POST",
               headers: {
