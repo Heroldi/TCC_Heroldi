@@ -6,6 +6,12 @@ const saltRounds = 10;
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
+	nome: {
+		type: String,
+		required: true,
+		trim: true,
+		maxlength: 150
+	},
 	email: {
 		type: String,
 		required: true,
@@ -20,10 +26,10 @@ const UserSchema = new Schema({
 		minlength: 6
 	},
 	cpf: {
-		type: String,
+		type: Number,
 		trim: true,
 		required: true,
-		minlength: 11,
+		minlength: 14,
 		unique: true
 	},
 	telefone: {

@@ -7,14 +7,16 @@
 </head>
 <body class="BodyCadastro">
     <form class="cadastroContainer">   
+        <label for="nomeInput" id="nomeLabel">Nome Completo</label>
+        <input type="text" id="nomeInput" name="nome">
         <label for="emailInput" id="emailLabel">Email</label>
-        <input type="text" id="emailInput" name="email">
+        <input type="email" id="emailInput" name="email">
         <label for="senhaInput" id="senhaLabel">Senha</label>
-        <input type="text" id="senhaInput" name="senha">
+        <input type="password" id="senhaInput" name="senha">
         <label for="cpfInput" id="cpfLabel">CPF</label>
-        <input type="text" id="cpfInput" name="cpf">
+        <input oninput="mascaraCpf(this)" maxlength="14" type="text" id="cpfInput" name="cpf">
         <label for="telefoneInput" id="telefoneLabel">Telefone</label>
-        <input type="text" id="telefoneInput" name="telefone">
+        <input onkeyup="handlePhone(event)" maxlength="15" type="tel" id="telefoneInput" name="telefone">
         <label for="enderecoInput" id="enderecoLabel">Endereço</label>
         <input type="text" id="enderecoInput" name="endereco">
         <input type="submit" id="botaoCadastro"  value="Cadastrar" onclick="SalvarBanco()">

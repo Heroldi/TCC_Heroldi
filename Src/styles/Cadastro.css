@@ -17,12 +17,12 @@
     height: 90%;
 }
 
-#usuarioLabel {
+#nomeLabel {
     font-size: 2rem;
     color: white;
 }
 
-#usuarioInput {
+#nomeInput {
     width: 30%;
     border-radius: 10px;
     height: 15%;

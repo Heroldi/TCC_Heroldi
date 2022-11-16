@@ -33,13 +33,14 @@ export default {
 			res.status(500).json({ message: "A senha inserida não atende aos requisitos" });
 		} else {
 			try {
+				let nomeCry = cry.AES.encrypt(nome, 'secret key 123').toString();
 				let emailCry = cry.AES.encrypt(email, 'secret key 123').toString();
 				let cpfCry = cry.AES.encrypt(cpf, 'secret key 123').toString();
 				let telefoneCry = cry.AES.encrypt(telefone, 'secret key 123').toString();
 				let enderecoCry = cry.AES.encrypt(endereco, 'secret key 123').toString();
 
 
-				userModel.create({ email: emailCry, senha: senha, cpf: cpfCry, telefone: telefoneCry, endereco: enderecoCry }, function () {
+				userModel.create({nome: nomeCry, email: emailCry, senha: senha, cpf: cpfCry, telefone: telefoneCry, endereco: enderecoCry }, function () {
 					res.status(200).json({ status: "Sucesso", message: "usuário cadastrado com sucesso" });
 				});
 			} catch {
@@ -57,6 +58,7 @@ export default {
 			let result = [];
 			userModel.forEach(element => {
 				const json = {
+					"nome": cry.AES.decrypt(element.nome, 'secret key 123').toString(cry.enc.Utf8),
 					"email": cry.AES.decrypt(element.email, 'secret key 123').toString(cry.enc.Utf8),
 					"cpf": cry.AES.decrypt(element.cpf, 'secret key 123').toString(cry.enc.Utf8),
 					"telefone": cry.AES.decrypt(element.telefone, 'secret key 123').toString(cry.enc.Utf8),

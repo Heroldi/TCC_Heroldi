@@ -1,3 +1,30 @@
+function mascaraCpf(numero){
+   
+  var valor = numero.value;
+  
+  if(isNaN(valor[valor.length-1])){ // impede entrar outro caractere que não seja número
+     numero.value = valor.substring(0, valor.length-1);
+     return;
+  }
+  
+  if (valor.length == 3 || valor.length == 7) numero.value += ".";
+  if (valor.length == 11) numero.value += "-";
+
+}
+
+const handlePhone = (event) => {
+  let input = event.target
+  input.value = phoneMask(input.value)
+}
+
+const phoneMask = (value) => {
+  if (!value) return ""
+  value = value.replace(/\D/g,'')
+  value = value.replace(/(\d{2})(\d)/,"($1) $2")
+  value = value.replace(/(\d)(\d{4})$/,"$1-$2")
+  return value
+}
+
 async function SalvarBanco(){
  
     let btn = document.querySelector(".cadastroContainer");
@@ -8,19 +35,21 @@ async function SalvarBanco(){
     let emailFiltro = /^.+@.+\..{2,}$/;
     let senhaFiltro = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
 
+    let nomeInput = document.querySelector("#nomeInput");
     let emailInput = document.querySelector("#emailInput");
     let senhaInput = document.querySelector("#senhaInput");
     let cpfInput = document.querySelector("#cpfInput");
     let telefoneInput = document.querySelector("#telefoneInput");
     let enderecoInput = document.querySelector("#enderecoInput");
 
+    let nome = nomeInput.value;
     let email = emailInput.value;
     let senha = senhaInput.value;
     let cpf = cpfInput.value;
     let telefone = telefoneInput.value;
     let endereco = enderecoInput.value;
 
-    if(email ==='' && senha ==='' && cpf ==='' && telefone ==='' && endereco ===''){
+    if(nome ==='' && email ==='' && senha ==='' && cpf ==='' && telefone ==='' && endereco ===''){
         emailInput.style.background = "yellow"
         senhaInput.style.background = "yellow"
         cpfInput.style.background = "yellow";
@@ -54,6 +83,7 @@ async function SalvarBanco(){
                 "Content-Type": "application/json",
               },
               body: JSON.stringify({
+                nome: nome,
                 email: email,
                 senha: senha,
                 cpf: cpf,
