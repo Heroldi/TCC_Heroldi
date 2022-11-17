@@ -1,3 +1,19 @@
+function habilitarBotaoModal(){
+  let checkBox = document.querySelector("#termosCheckbox").checked;
+  let botaoFechar = document.querySelector(".btnFechaModal");
+  let botaoCadastro = document.querySelector("#botaoCadastro");
+
+  if(checkBox){
+    botaoFechar.removeAttribute('disabled')
+    botaoCadastro.removeAttribute('disabled')
+  }else{
+    botaoFechar.setAttribute('disabled', 'disabled');
+    botaoCadastro.setAttribute('disabled', 'disabled');
+  }
+}
+
+
+
 function openModal(mn) {
   let modal = document.getElementById(mn);
 

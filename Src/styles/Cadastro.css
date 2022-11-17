@@ -5,8 +5,7 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
-    /* background: linear-gradient(180deg, #33383D 0%, #1C1D20 100%); */
-    background-color:#33383D ;
+    background: linear-gradient(180deg, #33383D 0%, #1C1D20 100%);
 }
 
 .cadastroContainer {
@@ -19,75 +18,93 @@
 }
 
 #nomeLabel {
-    font-size: 2rem;
+    font-size: 1.7rem;
     color: white;
 }
 
 #nomeInput {
-    width: 30%;
+    width: 22%;
     border-radius: 10px;
     height: 15%;
     margin-bottom: 3px;
 }
 
 #senhaLabel {
-    font-size: 2rem;
+    font-size: 1.7rem;
     color: white;
 }
 
 #senhaInput {
-    width: 30%;
+    width: 22%;
     border-radius: 10px;
     height: 15%;
     margin-bottom: 3px;
 }
 
 #emailLabel {
-    font-size: 2rem;
+    font-size: 1.7rem;
     color: white;
 }
 
 #emailInput {
-    width: 30%;
+    width: 22%;
     border-radius: 10px;
     height: 15%;
     margin-bottom: 3px;
 }
+
+#emailInput::placeholder {
+    padding-left: 10px;
+}
+
 #cpfLabel {
-    font-size: 2rem;
+    font-size: 1.7rem;
     color: white;
 }
 
 #cpfInput {
-    width: 30%;
+    width: 22%;
     border-radius: 10px;
     height: 15%;
     margin-bottom: 3px;
 }
+
+#cpfInput::placeholder {
+    padding-left: 10px;
+}
+
 #telefoneLabel {
-    font-size: 2rem;
+    font-size: 1.7rem;
     color: white;
 }
 
 #telefoneInput {
-    width: 30%;
+    width: 22%;
     border-radius: 10px;
     height: 15%;
     margin-bottom: 3px;
 }
 
+#telefoneInput::placeholder {
+    padding-left: 10px;
+}
+
 #enderecoLabel {
-    font-size: 2rem;
+    font-size: 1.7rem;
     color: white;
 }
 
 #enderecoInput {
-    width: 30%;
+    width: 22%;
     border-radius: 10px;
     height: 15%;
     margin-bottom: 3px;
 }
 
+.avisoTermos{
+    color: #E9B425;
+    font-size: 1.2rem;
+}
 
 #botaoCadastro {
     width: 20vw;
@@ -96,31 +113,27 @@
     cursor: pointer;  
     font-size: 1.5rem;
     font-weight: bold;
-    margin-top: 20px;  
 }
 
-#botaoCadastro:hover {
-    size: 7px;
-    border: none;       
+.termosUso {
+    margin-block-end: 0;
+    margin-block-start: 0;
+    margin-top: 20px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: #E9B425;
 }
 
 .termosUsoBox{
-margin-top: 20px;
+    margin-top: 20px;
 }
 
-#spanTermosUso{
-    margin-bottom: 10px;
-    color: black;
-    font-size: 1.3rem;
-}
-#termosUso {
-    margin-bottom: 10px;
-    color: white;
-    font-size: 1.3rem;
+.termosUso:hover{
+    text-decoration: underline;
 }
 
 .modal {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.1);
     position: absolute;
     top: 0;
     left: 0;
@@ -130,22 +143,46 @@ margin-top: 20px;
 }
 
 .termosContent{
-    /* display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center; */
-    margin: 0 auto;
-    margin-top: 3%;
+    border: black 5px solid;
+    margin: auto;
+    margin-top: 39px;
     max-height: 80%;
-    max-width: 70%;
+    max-width: 50%;
+    padding: 0 3% 3% 3%;
     background-color: #eee;
-    padding: 0;
     overflow-y: scroll;
-    box-shadow: 0 0 2px #fff;
+    box-shadow: 0 0 5px #fff;
 }
-.textContent {
+
+#spanTermosUso{
+    color: black;
+    font-size: 1.5rem;
+}
+
+#termosCheckbox{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+.checkBox {
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: center;
+    margin-bottom: 20px;
+}
+.fecharModal {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.btnFechaModal {
+    width: 10vw;
+    border-radius: 10px;
+    height: 4vh;
+    cursor: pointer;  
+    font-size: 1rem;
+    font-weight: bold;
 }

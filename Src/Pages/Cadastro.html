@@ -19,13 +19,16 @@
         <input onkeyup="handlePhone(event)"minlength="15" maxlength="15" type="tel" id="telefoneInput" name="telefone" placeholder="ex: (xx) xxxxx-xxxx">
         <label for="enderecoInput" id="enderecoLabel" >Endereço</label>
         <input type="text" id="enderecoInput" name="endereco" minlength="1" maxlength="150">
-        <input type="submit" id="botaoCadastro"  value="Cadastrar" onclick="SalvarBanco()">
-        <p onclick="openModal('modalBox')" class="termosUso">Termos de uso</p> 
+        <p class="avisoTermos">Para dar continuidade clique em "Termos de Uso"</p>
+        <input type="submit" id="botaoCadastro"  value="Cadastrar" onclick="SalvarBanco()" disabled>
+        <p onclick="openModal('modalBox')" class="termosUso">⇨ Termos de uso ⇦</p> 
     </form>
 
     <div id="modalBox" class="modal">
         <div class="termosContent">
-            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla arcu dolor, porttitor congue diam at, gravida hendrerit urna. Pellentesque fermentum consequat sapien eget euismod. Fusce non purus vel eros ornare accumsan. Integer pulvinar purus sit amet dui interdum egestas. In ut interdum lorem, eget suscipit velit. Integer ac rutrum dolor. Suspendisse pellentesque placerat accumsan. Duis interdum ut lacus ornare tincidunt. Nunc mollis, eros a interdum hendrerit, odio felis sollicitudin sem, quis vulputate nisi leo at lectus. Proin tempus nisi neque, et placerat dui elementum ut.
+            <p>Para dar cotinuidade no seu cadastro leia os termos de uso a seguir e aceite-os no final do documento<br/>
+                <br/>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla arcu dolor, porttitor congue diam at, gravida hendrerit urna. Pellentesque fermentum consequat sapien eget euismod. Fusce non purus vel eros ornare accumsan. Integer pulvinar purus sit amet dui interdum egestas. In ut interdum lorem, eget suscipit velit. Integer ac rutrum dolor. Suspendisse pellentesque placerat accumsan. Duis interdum ut lacus ornare tincidunt. Nunc mollis, eros a interdum hendrerit, odio felis sollicitudin sem, quis vulputate nisi leo at lectus. Proin tempus nisi neque, et placerat dui elementum ut.
 
                 Proin ornare elit vitae lacus sagittis sodales. Quisque porta sollicitudin feugiat. Curabitur nec semper arcu. Praesent semper odio a augue laoreet consectetur. Sed finibus, nisl et sollicitudin lobortis, magna turpis egestas erat, ac hendrerit ex mi in lorem. Etiam porttitor sit amet mi viverra imperdiet. Praesent rutrum massa porta tincidunt ornare. Sed non laoreet tellus. Fusce non dapibus lectus. Sed et posuere felis. Morbi molestie id enim eget vestibulum. Cras et orci ut sapien pretium efficitur eget in lorem. Pellentesque tincidunt auctor euismod.
                 
@@ -44,12 +47,14 @@
                 Maecenas velit dolor, sollicitudin in varius ut, eleifend id turpis. Duis convallis pharetra pharetra. Maecenas dignissim dignissim nibh. Fusce convallis, ante ut auctor blandit, velit risus convallis eros, vitae ultrices libero orci ut magna. Etiam efficitur vitae leo ut vulputate. Ut vehicula felis in auctor euismod. Aenean ultricies ac dui et egestas. Vestibulum eget efficitur risus, sed consectetur ligula. Donec consectetur ipsum ipsum, vitae tincidunt ligula elementum semper. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin maximus sem vel tristique sagittis. Pellentesque elementum velit sit amet ex accumsan porta. Curabitur eget magna at urna euismod faucibus. Vestibulum vel lacus sagittis, maximus neque vel, laoreet quam. Quisque auctor fringilla eros, a dictum leo vestibulum dignissim. In velit augue, ullamcorper vel faucibus ut, semper at enim.
                 
                 Sed massa purus, interdum sit amet eros vel, tincidunt scelerisque sem. Praesent lobortis, dolor id pellentesque varius, velit ipsum feugiat urna, a elementum mauris nibh non nisi. Vestibulum tempus mauris sit amet urna pellentesque, in efficitur justo venenatis. Aenean dictum ante dolor, sed fermentum nisl rutrum vitae. Aenean ultricies leo sed rhoncus dapibus. Suspendisse aliquam enim vel elit sollicitudin, non consequat mi bibendum. Morbi eget eros arcu. Suspendisse condimentum cursus neque, sed varius urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut ipsum et metus mollis scelerisque eget non odio. Duis mattis nisl scelerisque posuere</p>
-
-            <div class="textContent">
-                <input type="checkbox" id="termosCheckbox">
-                <span id="spanTermosUso">Aceitar termos de uso</span>  
-                <button class="btn" onclick="closeModal('modalBox')">Fechar</button> 
+            <div class="checkBox">
+                <input type="checkbox" id="termosCheckbox" onclick="habilitarBotaoModal()">
+                <span id="spanTermosUso">Aceitar termos de uso</span>                
             </div>
+            <div class="fecharModal">
+                <button class="btnFechaModal" onclick="closeModal('modalBox')" disabled>Fechar</button> 
+            </div>
+            
         </div>
               
         </div>
