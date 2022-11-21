@@ -18,7 +18,7 @@ try{
         const enderecoTd = document.createElement('td');
         const excluirTd = document.createElement('td');
         excluirTd.setAttribute("class", "excluir");
-        excluirTd.setAttribute("onClick", "excluir()");
+        excluirTd.setAttribute("onClick", "excluir(event)");
 
         tr.appendChild(nomeTd);
         tr.appendChild(emailTd);
@@ -33,7 +33,6 @@ try{
         telefoneTd.textContent = element.telefone;
         enderecoTd.textContent = element.endereco;
         excluirTd.textContent = "Excluir";
-        console.log(element.email);
      });
 
 }catch{
@@ -43,6 +42,28 @@ try{
 
 listar();
 
-function excluir(){
-  window.location.href = "login.html";
-}
+
+    // window.location.href = "login.html";  
+
+
+    async function excluir(e){
+
+      let emailReq =  e.target.parentNode
+      emailReq = emailReq.children[1].textContent;
+
+      try{        
+        const rawResponse = await fetch("http://localhost:8080/users/excluir", {
+          method: "DELETE",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: emailReq
+          }),
+        });
+        location. reload();   
+      }catch{
+        alert("Ops, algo deu errado, tente novamente");
+      }
+      }
