@@ -26,7 +26,7 @@ const UserSchema = new Schema({
 		minlength: 6
 	},
 	cpf: {
-		type: Number,
+		type: String,
 		trim: true,
 		required: true,
 		minlength: 14,

@@ -3,7 +3,6 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import express from 'express';
 import cry from 'crypto-js';
-import hmacSHA512 from 'crypto-js/hmac-sha512.js';
 
 export default {
 	user: function (req, res, next) {
@@ -13,6 +12,7 @@ export default {
 	cadastrarUser: function (req, res) {
 		let emailFiltro = /^.+@.+\..{2,}$/;
 		let senhaFiltro = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+		let nome = req.body.nome;
 		let email = req.body.email;
 		let senha = req.body.senha;
 		let cpf = req.body.cpf;
@@ -66,7 +66,6 @@ export default {
 				}
 				result.push(json);
 			});
-			console.log(result);
 
 			if (err) {
 				next(err)
@@ -74,6 +73,32 @@ export default {
 				res.status(200).json(result);
 			}
 		})
+	},
+
+	DeletarUser: function (req, res, next) {
+		let emailCry;
+		const emailReq = req.body.email;
+
+		function del(emailQuerry){
+			userModel.deleteOne({emailReq: emailQuerry},(err, userModel) => {					
+				if(err){
+					next(err);
+				}else{
+					res.status(200).json(userModel);
+				}
+			})
+		}
+		
+		userModel.find((err, userModel) => {			
+			userModel.forEach(element => {
+				emailCry = cry.AES.decrypt(element.email, 'secret key 123').toString(cry.enc.Utf8);
+				if(emailReq === emailCry)	{
+					del(emailCry);			
+				}
+			})	
+		})
+		
+		
 	},
 
 

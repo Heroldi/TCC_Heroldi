@@ -7,3 +7,14 @@ table,td, th{
     border-collapse: collapse;
     padding: 10px;
 }
+
+.excluir{
+    background: blue;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.excluir:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

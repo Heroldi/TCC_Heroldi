@@ -7,5 +7,6 @@ router.post('/registrar', userController.cadastrarUser);
 router.post('/login', userController.authenticate);
 router.post('/verifica', userController.verificaToken);
 router.get('/listar', userController.listarUsers);
+router.delete('/excluir', userController.DeletarUser);
 
 export default router;
