@@ -7,6 +7,20 @@
     <title>Editar Cadastro</title>
 </head>
 <body>
-    
+    <form class="editarContainer">   
+        <label for="nomeInput" id="nomeLabel">Nome Completo</label>
+        <input type="text" id="nomeInput" name="nome" >
+        <label for="emailInput" id="emailLabel">Email</label>
+        <input type="email" id="emailInput" name="email">
+        <label for="cpfInput" id="cpfLabel">CPF</label>
+        <input type="text" id="cpfInput" name="cpf">
+        <label for="telefoneInput" id="telefoneLabel">Telefone</label>
+        <input type="tel" id="telefoneInput" name="telefone">
+        <label for="enderecoInput" id="enderecoLabel" >Endereço</label>
+        <input type="text" id="enderecoInput" name="endereco">
+        <input type="submit" id="botaoCadastro"  value="Atualizar" onclick="editar()">
+    </form>   
 </body>
+
+<script src="../js/editar.js"></script>
 </html>

@@ -8,5 +8,6 @@ router.post('/login', userController.authenticate);
 router.post('/verifica', userController.verificaToken);
 router.get('/listar', userController.listarUsers);
 router.delete('/excluir', userController.DeletarUser);
+router.put('/editar', userController.EditaUser);
 
 export default router;

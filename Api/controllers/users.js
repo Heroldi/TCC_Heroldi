@@ -88,7 +88,7 @@ export default {
 				}
 			})
 		}
-		
+
 		userModel.find((err, userModel) => {			
 			userModel.forEach(element => {
 				emailCry = cry.AES.decrypt(element.email, 'secret key 123').toString(cry.enc.Utf8);
@@ -96,9 +96,41 @@ export default {
 					del(emailCry);			
 				}
 			})	
-		})
+		})			
+	},
+
+	EditaUser: function (req, res, next) {
+		let emailDeCry;
+		const emailReq = req.body.email;
+
+		const nomeReq = req.body.nome;
+		const cpfReq = req.body.cpf;
+		const telefoneReq = req.body.telefone;
+		const enderecoReq = req.body.endereco;
+
+		let nomeCry = cry.AES.encrypt(nomeReq, 'secret key 123').toString();
+		let cpfCry = cry.AES.encrypt(cpfReq, 'secret key 123').toString();
+		let telefoneCry = cry.AES.encrypt(telefoneReq, 'secret key 123').toString();
+		let enderecoCry = cry.AES.encrypt(enderecoReq, 'secret key 123').toString();
+
+		function edita(emailQuerry){
+			userModel.findOneAndUpdate({emailReq: emailQuerry},{nome:nomeCry, cpf: cpfCry, telefone: telefoneCry, endereco: enderecoCry},(err, userModel) => {					
+				if(err){
+					next(err);
+				}else{
+					res.status(200).json({message: 'sucesso', userModel});
+				}
+			})
+		}
 		
-		
+		userModel.find((err, userModel) => {			
+			userModel.forEach(element => {
+				emailDeCry = cry.AES.decrypt(element.email, 'secret key 123').toString(cry.enc.Utf8);
+				if(emailReq === emailDeCry)	{
+					edita(emailDeCry);			
+				}
+			})	
+		})			
 	},
 
 
@@ -152,7 +184,7 @@ export default {
 						try {
 							if (element != null && bcrypt.compareSync(senha, element.senha)) {
 								const token = jwt.sign({ id: element._id }, req.app.get('secretKey'), { expiresIn: '1h' });
-								res.status(200).json({ menssagem: "Usuário encontrado", token: token });
+								res.status(200).json({ menssagem: "Usuário encontrado", token: token , userModel});
 							} else {
 								res.status(400).json({ Messagem: "Email ou senha inválido" });
 							}

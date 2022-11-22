@@ -61,7 +61,7 @@ try{
 listar();
 
 
-      async function excluir(){
+async function excluir(){
         try{        
         const rawResponse = await fetch("http://localhost:8080/users/excluir", {
           method: "DELETE",
@@ -77,4 +77,4 @@ listar();
       }catch{
         alert("Ops, algo deu errado, tente novamente");
       }
-      }
+}
