@@ -2,11 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/bemVindo.css">
     <title>Bem Vindo</title>
 </head>
 <body>
-    <p id="bem">BEM VINDO</p>
+    <header>
+        <nav class="navBar">
+            <button class="excluirBtn" onclick="openModal('modalBox')">Excluir Conta</button>
+            <button class="editarBtn">Editar Conta</button>
+        </nav>
+    </header>
+    <div class="bemVindoContent">
+        <p class="bemVindo">BEM VINDO</p>
+    </div>
+    <div id="modalBox" class="modal">
+        <div class="Content">
+            <div class="modalContent">
+                <spam class="spanExcluir">Deseja Excluir está conta?</spam class="spamExcluir">
+                    <button class="aceitarBtn" onclick="excluir()">Sim</button>      
+                    <button class="fecharModalBtn" onclick="closeModal('modalBox')">Não</button> 
+            </div>       
+        </div>         
+    </div>  
 </body>
+
+<script src="../js/bemVindo.js"></script>
 </html>

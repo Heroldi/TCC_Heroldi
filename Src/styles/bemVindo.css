@@ -1,22 +1,61 @@
-.containerTable{
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.navBar {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, #33383D 0%, #1C1D20 100%);
+    height: 10vh;
 }
 
-table,td, th{
-    border: 1px black solid;
-    border-collapse: collapse;
-    padding: 10px;
-}
-
-.excluir{
-    background: blue;
+.excluirBtn {
+    background-color: red;
+    border: 1px white solid;
+    border-radius: 10px;
+    width: 15%;
+    height: 50px;
+    margin-right: 20px;  
     color: white;
     font-size: 1.3rem;
+    font-weight: bold; 
+    cursor: pointer;
 }
 
-.excluir:hover {
+.excluirBtn:hover{
     text-decoration: underline;
+}
+
+.editarBtn {
+    background-color: rgb(8, 175, 241);
+    color: white;
+    border: 1px white solid;
+    border-radius: 10px;
+    width: 15%;
+    height: 50px;
+    margin-left: 20px;
+    font-size: 1.3rem;
+    font-weight: bold;
     cursor: pointer;
+}
+
+.editarBtn:hover{
+    text-decoration: underline;
+}
+
+.bemVindoContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.bemVindo {
+    margin: 0;
+    font-size: 15rem;
 }
 
 .modal {

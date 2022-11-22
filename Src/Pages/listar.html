@@ -18,11 +18,20 @@
                 <th class="opcoes">Opções</th>
             </tr>             
         </thead>
-        <tbody class="tbodyListar">
-            
+        <tbody class="tbodyListar">           
         </tbody>
     </table>
 </div>
+
+<div id="modalBox" class="modal">
+    <div class="Content">
+        <div class="modalContent">
+            <spam class="spanExcluir">Deseja Excluir está conta?</spam class="spamExcluir">
+                <button class="aceitarBtn" onclick="excluir(event)">Sim</button>      
+            <button class="fecharModalBtn" onclick="closeModal('modalBox')">Não</button> 
+        </div>       
+    </div>         
+</div>       
 </body>
 
 <script src="../js/listar.js"></script>

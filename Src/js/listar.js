@@ -1,3 +1,21 @@
+function openModal(mn) {
+  let modal = document.getElementById(mn);
+
+  if (typeof modal == 'undefined' || modal === null)
+      return;
+
+  modal.style.display = 'Block';
+}
+
+function closeModal(mn) {
+  let modal = document.getElementById(mn);
+
+  if (typeof modal == 'undefined' || modal === null)
+      return;
+  modal.style.display = 'none';
+}
+
+
 async function listar(){
 try{
     
@@ -18,7 +36,7 @@ try{
         const enderecoTd = document.createElement('td');
         const excluirTd = document.createElement('td');
         excluirTd.setAttribute("class", "excluir");
-        excluirTd.setAttribute("onClick", "excluir(event)");
+        excluirTd.setAttribute("onClick", "pegaEmail(event)");
 
         tr.appendChild(nomeTd);
         tr.appendChild(emailTd);
@@ -43,15 +61,8 @@ try{
 listar();
 
 
-    // window.location.href = "login.html";  
-
-
-    async function excluir(e){
-
-      let emailReq =  e.target.parentNode
-      emailReq = emailReq.children[1].textContent;
-
-      try{        
+      async function excluir(){
+        try{        
         const rawResponse = await fetch("http://localhost:8080/users/excluir", {
           method: "DELETE",
           headers: {

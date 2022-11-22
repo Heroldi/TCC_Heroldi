@@ -7,10 +7,10 @@
 </head>
 <body class="BodyLogin">
         <form class="loginContainer"> 
-            <label for="emailInput" id="emailLabel">Usuário</label>
-            <input type="text" id="emailInput" name="email">
+            <label for="emailInput" id="emailLabel">E-mail</label>
+            <input type="text" id="emailInput" name="email" onfocus="voltaCorEmail()">
             <label for="senhaInput" id="senhaLabel">Senha</label>
-            <input type="text" id="senhaInput" name="senha">
+            <input type="password" id="senhaInput" name="senha" onfocus="voltaCorSenha()" >
             <input type="submit" id="botaoLogin" value="Entrar" onclick="BuscaBanco()" >
     </div>
 </body>

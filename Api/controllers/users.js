@@ -152,13 +152,15 @@ export default {
 						try {
 							if (element != null && bcrypt.compareSync(senha, element.senha)) {
 								const token = jwt.sign({ id: element._id }, req.app.get('secretKey'), { expiresIn: '1h' });
-								res.status(200).json({ menssgem: "Usuário encontrado", token: token });
+								res.status(200).json({ menssagem: "Usuário encontrado", token: token });
 							} else {
-								res.status(400).json({ Message: "Email ou senha inválido" });
+								res.status(400).json({ Messagem: "Email ou senha inválido" });
 							}
 						} catch {
 							console.error("Erro");
 						}
+					}else{
+						res.status(400).json({ menssagem: "Usuário não encontado"});
 					}
 				})
 			});

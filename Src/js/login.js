@@ -1,6 +1,4 @@
-
- 
- async function BuscaBanco(){
+async function BuscaBanco(){
   
     let btn = document.querySelector(".loginContainer");
     btn.addEventListener('click', function(btnLogin){
@@ -16,16 +14,16 @@
     let email = emailInput.value;
     let senha = senhaInput.value;
     if(email === '' || senha === ''){
-        emailInput.style.background = "yellow"
-        senhaInput.style.background = "yellow"
+        emailInput.style.backgroundColor = "yellow"
+        senhaInput.style.backgroundColor = "yellow"
     }else if(email === "admin" && senha === "admin"){
         window.location.href="bemVindoAdmin.html"
     }else if (!emailFiltro.test(email)) {
-        emailInput.style.background = "yellow"
-        senhaInput.style.background = "yellow"
+        emailInput.style.backgroundColor = "yellow"
+        senhaInput.style.backgroundColor = "yellow"
     }else if(!senhaFiltro.test(senha)){
-        emailInput.style.background = "yellow"
-        senhaInput.style.background = "yellow"
+        emailInput.style.backgroundColor = "yellow"
+        senhaInput.style.backgroundColor = "yellow"
     }else{
       try{
       const rawResponse = await fetch("http://localhost:8080/users/login", {
@@ -43,9 +41,11 @@
     const content = await rawResponse.json();      
 
     if(rawResponse.status === 200){
+        localStorage.setItem("email", email);
         window.location.href="bemVindo.html"
     }else{
-        console.log("erro")
+      emailInput.style.backgroundColor = "yellow"
+      senhaInput.style.backgroundColor = "yellow"
     }
       
   }catch{
@@ -53,3 +53,14 @@
   }
   };
   }
+
+  function voltaCorEmail(){
+    let emailInput = document.querySelector("#emailInput")
+    emailInput.style.backgroundColor = "field"
+    
+    }
+
+  function voltaCorSenha(){
+      let senhaInput = document.querySelector("#senhaInput");
+      senhaInput.style.backgroundColor = "field"
+    }
