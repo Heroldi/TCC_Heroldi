@@ -41,9 +41,9 @@ async function BuscaBanco(){
     const content = await rawResponse.json();      
 
     if(rawResponse.status === 200){
-    // console.log(content.userModel[0]._id)
+    console.log(content.userModel[0]._id)
       
-        localStorage.setItem("email", email);
+        localStorage.setItem("id", content.userModel[0]._id);
         window.location.href="bemVindo.html"
     }else{
       emailInput.style.backgroundColor = "yellow"

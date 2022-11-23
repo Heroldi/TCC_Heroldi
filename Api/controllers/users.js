@@ -58,6 +58,7 @@ export default {
 			let result = [];
 			userModel.forEach(element => {
 				const json = {
+					'id':element._id,
 					"nome": cry.AES.decrypt(element.nome, 'secret key 123').toString(cry.enc.Utf8),
 					"email": cry.AES.decrypt(element.email, 'secret key 123').toString(cry.enc.Utf8),
 					"cpf": cry.AES.decrypt(element.cpf, 'secret key 123').toString(cry.enc.Utf8),
@@ -75,62 +76,64 @@ export default {
 		})
 	},
 
+	listarUmUser: function(req,res,next){
+
+		let nome;
+		let email;
+		let cpf;
+		let telefone;
+		let endereco;
+		const idReq = req.body.id;
+		userModel.findOne({_id:idReq},(err,userModel) =>
+		{
+
+			nome =  cry.AES.decrypt(userModel.nome, 'secret key 123').toString(cry.enc.Utf8);
+			email=  cry.AES.decrypt(userModel.email, 'secret key 123').toString(cry.enc.Utf8);
+			cpf =  cry.AES.decrypt(userModel.cpf, 'secret key 123').toString(cry.enc.Utf8);
+			telefone =  cry.AES.decrypt(userModel.telefone, 'secret key 123').toString(cry.enc.Utf8);
+			endereco =  cry.AES.decrypt(userModel.endereco, 'secret key 123').toString(cry.enc.Utf8);
+			if(err){
+				next(err);
+			}else{
+				res.status(200).json({nome, email, cpf, telefone, endereco});
+			}
+		})
+	},
+
 	DeletarUser: function (req, res, next) {
-		let emailCry;
-		const emailReq = req.body.email;
+		const idReq = req.body.id;
 
-		function del(emailQuerry){
-			userModel.deleteOne({emailReq: emailQuerry},(err, userModel) => {					
-				if(err){
-					next(err);
-				}else{
-					res.status(200).json(userModel);
-				}
-			})
-		}
-
-		userModel.find((err, userModel) => {			
-			userModel.forEach(element => {
-				emailCry = cry.AES.decrypt(element.email, 'secret key 123').toString(cry.enc.Utf8);
-				if(emailReq === emailCry)	{
-					del(emailCry);			
-				}
-			})	
-		})			
+		userModel.deleteOne({_id:idReq},(err, userModel) => {					
+					if(err){
+						next(err);
+					}else{
+						res.status(200).json(userModel);
+					}
+				})		
 	},
 
 	EditaUser: function (req, res, next) {
-		let emailDeCry;
-		const emailReq = req.body.email;
+		let idReq = req.body.id;
 
+		const emailReq = req.body.email;
 		const nomeReq = req.body.nome;
 		const cpfReq = req.body.cpf;
 		const telefoneReq = req.body.telefone;
 		const enderecoReq = req.body.endereco;
-
+	
 		let nomeCry = cry.AES.encrypt(nomeReq, 'secret key 123').toString();
+		let emailCry = cry.AES.encrypt(emailReq, 'secret key 123').toString();
 		let cpfCry = cry.AES.encrypt(cpfReq, 'secret key 123').toString();
 		let telefoneCry = cry.AES.encrypt(telefoneReq, 'secret key 123').toString();
 		let enderecoCry = cry.AES.encrypt(enderecoReq, 'secret key 123').toString();
 
-		function edita(emailQuerry){
-			userModel.findOneAndUpdate({emailReq: emailQuerry},{nome:nomeCry, cpf: cpfCry, telefone: telefoneCry, endereco: enderecoCry},(err, userModel) => {					
+			userModel.findOneAndUpdate({_id: idReq},{email:emailCry , nome:nomeCry, cpf: cpfCry, telefone: telefoneCry, endereco: enderecoCry},(err, userModel) => {					
 				if(err){
 					next(err);
 				}else{
 					res.status(200).json({message: 'sucesso', userModel});
 				}
-			})
-		}
-		
-		userModel.find((err, userModel) => {			
-			userModel.forEach(element => {
-				emailDeCry = cry.AES.decrypt(element.email, 'secret key 123').toString(cry.enc.Utf8);
-				if(emailReq === emailDeCry)	{
-					edita(emailDeCry);			
-				}
-			})	
-		})			
+			})		
 	},
 
 

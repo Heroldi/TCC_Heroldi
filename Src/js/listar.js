@@ -1,3 +1,5 @@
+let idReq;
+
 function openModal(mn) {
   let modal = document.getElementById(mn);
 
@@ -27,8 +29,11 @@ try{
 
      const tbody = document.querySelector(".tbodyListar");
      content.forEach(element => {
+
+      console.log(element);
         const tr = document.createElement('tr');
         tbody.appendChild(tr);
+        const idTd = document.createElement('td');
         const nomeTd = document.createElement('td');
         const emailTd = document.createElement('td');
         const cpfTd = document.createElement('td');
@@ -38,6 +43,7 @@ try{
         excluirTd.setAttribute("class", "excluir");
         excluirTd.setAttribute("onClick", "pegaEmail(event)");
 
+        tr.appendChild(idTd);
         tr.appendChild(nomeTd);
         tr.appendChild(emailTd);
         tr.appendChild(cpfTd);
@@ -45,6 +51,7 @@ try{
         tr.appendChild(enderecoTd);
         tr.appendChild(excluirTd);
         
+        idTd.textContent = element.id;
         nomeTd.textContent = element.nome;
         emailTd.textContent = element.email;
         cpfTd.textContent = element.cpf;
@@ -60,6 +67,13 @@ try{
 
 listar();
 
+function pegaEmail(e){
+idReq = e.target.parentNode
+idReq = emailReq.children[0].textContent;
+
+openModal('modalBox');
+}
+
 
 async function excluir(){
         try{        
@@ -70,7 +84,7 @@ async function excluir(){
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            email: emailReq
+            id: idReq
           }),
         });
         location. reload();   

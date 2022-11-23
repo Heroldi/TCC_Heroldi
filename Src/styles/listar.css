@@ -6,10 +6,11 @@ table,td, th{
     border: 1px black solid;
     border-collapse: collapse;
     padding: 10px;
+    font-size: 1.2rem;
 }
 
 .excluir{
-    background: blue;
+    background-color: rgba(160, 75, 75, 0.733);
     color: white;
     font-size: 1.3rem;
 }
