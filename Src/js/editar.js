@@ -17,8 +17,6 @@ telefoneInput.value = data.telefone;
 enderecoInput.value = data.endereco;
 
 
-
-
 async function editar(){
 let nome = nomeInput.value;
 let email = emailInput.value;
@@ -54,7 +52,14 @@ let endereco = enderecoInput.value;
     const content = await rawResponse.json();      
 
     console.log(content);
+
+    alert("Seus dados foram atualizados com sucesso");
+    window.location.href="bemVindo.html";
   }catch{
     alert("Ops, algo deu errado, tente novamente");
   }
+  }
+
+  function voltar(){
+    window.location.href="bemVindo.html";
   }

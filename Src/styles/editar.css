@@ -95,6 +95,16 @@
     cursor: pointer;  
     font-size: 1.5rem;
     font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#botaoVoltar{
+    width: 20vw;
+    border-radius: 30px;
+    height: 7vh;
+    cursor: pointer;  
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 
