@@ -68,3 +68,7 @@ async function excluir() {
     alert("Ops, algo deu errado, tente novamente");
   }
 }
+
+function logout(){
+  window.location.href = "login.html"
+}

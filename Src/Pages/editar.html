@@ -8,16 +8,16 @@
 <body class="bodyEditar">
     <form class="editarContainer">   
         <label for="nomeInput" id="nomeLabel">Nome Completo</label>
-        <input type="text" id="nomeInput" name="nome" >
+        <input type="text" id="nomeInput" name="nome" onfocus="voltaCorNome()">
         <label for="emailInput" id="emailLabel">Email</label>
-        <input type="email" id="emailInput" name="email">
+        <input type="email" id="emailInput" name="email" onfocus="voltaCorEmail()">
         <label for="cpfInput" id="cpfLabel">CPF</label>
-        <input type="text" id="cpfInput" name="cpf">
+        <input type="text" id="cpfInput" name="cpf" onfocus="voltaCorCpf()">
         <label for="telefoneInput" id="telefoneLabel">Telefone</label>
-        <input type="tel" id="telefoneInput" name="telefone">
+        <input type="tel" id="telefoneInput" name="telefone" onfocus="voltaCorTelefone()">
         <label for="enderecoInput" id="enderecoLabel" >Endereço</label>
-        <input type="text" id="enderecoInput" name="endereco">
-        <input type="submit" id="botaoCadastro"  value="Atualizar" onclick="editar()">
+        <input type="text" id="enderecoInput" name="endereco" onfocus="voltaCorEndereco()">
+        <input type="submit" id="botaoEditar"  value="Atualizar" onclick="editar()">
         <button type="button" id="botaoVoltar" onclick="voltar()">Voltar</button>
     </form>   
 </body>

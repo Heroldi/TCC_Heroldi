@@ -77,16 +77,15 @@ input:-webkit-autofill {
     color: white;   
 }
 
-#termosUso {
-    margin-top: 200px;
-    color: white;
+#cadastro {
+    margin-top: 30px;
+    font-size: 1.5rem;
+    color: #E9B425;
     text-decoration: none;
-    font-size: 1.3rem;
 }
 
-#termosUso:hover {
-    font-size: 1.5rem;   
+#cadastro:hover {
+    text-decoration: underline;
 }
-
 
 
