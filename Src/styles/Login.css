@@ -17,6 +17,11 @@
     height: 90%;
 }
 
+input:-webkit-autofill {
+    -webkit-text-fill-color: white;
+    -webkit-box-shadow: 0 0 0px 1000px #33383D inset;
+  }
+
 #emailLabel {
     font-size: 3rem;
     color: white;
@@ -25,9 +30,14 @@
 
 #emailInput {
     width: 30%;
-    border-radius: 10px;
+    border-radius: 20px;
     height: 8%;
     margin-bottom: 10px;
+    background-color: #33383D;
+    color: white;
+    border-color: #ffffff;
+    font-size: 1.1rem;
+    padding-left: 5px;
 }
 
 #senhaLabel {
@@ -38,9 +48,14 @@
 
 #senhaInput {
     width: 30%;
-    border-radius: 10px;
+    border-radius: 20px;
     height: 8%;
     margin-bottom: 25px;
+    background-color: #33383D;
+    color: white;
+    border-color: #ffffff;
+    font-size: 1.1rem;
+    padding-left: 5px;
 }
 
 
@@ -51,11 +66,15 @@
     cursor: pointer;  
     font-size: 1.7rem;
     font-weight: bold;
+    background-color: #33383D;
+    border-color: white;
+    color: white;
 }
 
 #botaoLogin:hover {
-    size: 7px;
-    border: none;      
+    font-size: 1.9rem;
+    border-color: white;
+    color: white;   
 }
 
 #termosUso {

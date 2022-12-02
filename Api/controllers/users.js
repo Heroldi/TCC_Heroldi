@@ -183,19 +183,19 @@ export default {
 				let emailCry;
 				userModel.forEach(element => {
 					emailCry = cry.AES.decrypt(element.email, 'secret key 123').toString(cry.enc.Utf8);
-					if (emailCry === email) {
+					if (emailCry == email) {
 						try {
 							if (element != null && bcrypt.compareSync(senha, element.senha)) {
-								const token = jwt.sign({ id: element._id }, req.app.get('secretKey'), { expiresIn: '1h' });
-								res.status(200).json({ menssagem: "Usuário encontrado", token: token , userModel});
+								const idReq = element._id.toString();
+								console.log(idReq);
+								// const token = jwt.sign({ id: element._id }, req.app.get('secretKey'), { expiresIn: '1h' });
+								res.status(200).json({ menssagem: "Usuário encontrado", id: idReq});
 							} else {
 								res.status(400).json({ Messagem: "Email ou senha inválido" });
 							}
 						} catch {
 							console.error("Erro");
 						}
-					}else{
-						res.status(400).json({ menssagem: "Usuário não encontado"});
 					}
 				})
 			});

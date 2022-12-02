@@ -8,17 +8,17 @@
 <body class="bodyCadastro">
     <form class="cadastroContainer">   
         <label for="nomeInput" id="nomeLabel">Nome Completo</label>
-        <input type="text" id="nomeInput" name="nome" minlength="1" maxlength="150">
+        <input type="text" id="nomeInput" name="nome" minlength="1" maxlength="150" onfocus="voltaCorNome()">
         <label for="emailInput" id="emailLabel">Email</label>
-        <input type="email" id="emailInput" name="email" maxlength="100" placeholder="ex: xxx@xx.xxx">
+        <input type="email" id="emailInput" name="email" maxlength="100" placeholder="ex: xxx@xx.xxx"onfocus="voltaCorEmail()">
         <label for="senhaInput" id="senhaLabel">Senha</label>
-        <input type="password" id="senhaInput" name="senha" maxlength="6" minlength="6">
+        <input type="password" id="senhaInput" name="senha" maxlength="6" minlength="6" onfocus="voltaCorSenha()">
         <label for="cpfInput" id="cpfLabel">CPF</label>
-        <input oninput="mascaraCpf(this)" minlength="14" maxlength="14" type="text" id="cpfInput" name="cpf" placeholder="ex: xxx.xxx.xxx-xx">
+        <input oninput="mascaraCpf(this)" minlength="14" maxlength="14" type="text" id="cpfInput" name="cpf" placeholder="ex: xxx.xxx.xxx-xx" onfocus="voltaCorCpf()">
         <label for="telefoneInput" id="telefoneLabel">Telefone</label>
-        <input onkeyup="handlePhone(event)"minlength="15" maxlength="15" type="tel" id="telefoneInput" name="telefone" placeholder="ex: (xx) xxxxx-xxxx">
+        <input onkeyup="handlePhone(event)"minlength="15" maxlength="15" type="tel" id="telefoneInput" name="telefone" placeholder="ex: (xx) xxxxx-xxxx" onfocus="voltaCorTelefone()">
         <label for="enderecoInput" id="enderecoLabel" >Endereço</label>
-        <input type="text" id="enderecoInput" name="endereco" minlength="1" maxlength="150">
+        <input type="text" id="enderecoInput" name="endereco" minlength="10" maxlength="150" onfocus="voltaCorEndereco()">
         <p class="avisoTermos">Para dar continuidade clique em "Termos de Uso"</p>
         <input type="submit" id="botaoCadastro"  value="Cadastrar" onclick="SalvarBanco()" disabled>
         <p onclick="openModal('modalBox')" class="termosUso">⇨ Termos de uso ⇦</p> 

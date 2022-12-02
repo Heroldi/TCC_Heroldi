@@ -14,16 +14,16 @@ async function BuscaBanco(){
     let email = emailInput.value;
     let senha = senhaInput.value;
     if(email === '' || senha === ''){
-        emailInput.style.backgroundColor = "yellow"
-        senhaInput.style.backgroundColor = "yellow"
+        emailInput.style.borderColor = "#E9B425";
+        senhaInput.style.borderColor = "#E9B425";
     }else if(email === "admin" && senha === "admin"){
         window.location.href="bemVindoAdmin.html"
     }else if (!emailFiltro.test(email)) {
-        emailInput.style.backgroundColor = "yellow"
-        senhaInput.style.backgroundColor = "yellow"
+        emailInput.style.borderColor = "#E9B425";
+        senhaInput.style.borderColor = "#E9B425";
     }else if(!senhaFiltro.test(senha)){
-        emailInput.style.backgroundColor = "yellow"
-        senhaInput.style.backgroundColor = "yellow"
+        emailInput.style.borderColor = "#E9B425";
+        senhaInput.style.borderColor = "#E9B425";
     }else{
       try{
       const rawResponse = await fetch("http://localhost:8080/users/login", {
@@ -41,13 +41,13 @@ async function BuscaBanco(){
     const content = await rawResponse.json();      
 
     if(rawResponse.status === 200){
-    console.log(content.userModel[0]._id)
-      
-        localStorage.setItem("id", content.userModel[0]._id);
-        window.location.href="bemVindo.html"
+    console.log(content.id)    
+        localStorage.setItem("id", content.id);
+        window.location.href="bemVindo.html" 
     }else{
-      emailInput.style.backgroundColor = "yellow"
-      senhaInput.style.backgroundColor = "yellow"
+      console.log(rawResponse)
+      emailInput.style.borderColor = "#E9B425";
+      senhaInput.style.borderColor = "#E9B425";
     }
       
   }catch{
@@ -58,11 +58,11 @@ async function BuscaBanco(){
 
   function voltaCorEmail(){
     let emailInput = document.querySelector("#emailInput")
-    emailInput.style.backgroundColor = "field"
+    emailInput.style.borderColor = "white";
     
     }
 
   function voltaCorSenha(){
       let senhaInput = document.querySelector("#senhaInput");
-      senhaInput.style.backgroundColor = "field"
+      senhaInput.style.borderColor = "white";
     }

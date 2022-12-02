@@ -14,91 +14,138 @@
     justify-content: center;
     align-items: center;
     width: 90%;
-    height: 90%;
+    height: 95%;
 }
 
 #nomeLabel {
     font-size: 1.7rem;
     color: white;
+    margin-bottom: 5px;
 }
 
 #nomeInput {
-    width: 22%;
-    border-radius: 10px;
+    width: 30%;
+    border-radius: 40px;
     height: 15%;
     margin-bottom: 3px;
-}
-
-#senhaLabel {
-    font-size: 1.7rem;
+    background-color: #33383D;
+    border-color: #ffffff;
     color: white;
-}
-
-#senhaInput {
-    width: 22%;
-    border-radius: 10px;
-    height: 15%;
-    margin-bottom: 3px;
+    font-size: 1rem;
+    padding-left: 5px;
 }
 
 #emailLabel {
     font-size: 1.7rem;
     color: white;
+    margin-bottom: 5px;
+    margin-top: 5x;
 }
 
 #emailInput {
-    width: 22%;
-    border-radius: 10px;
+    width: 30%;
+    border-radius: 40px;
     height: 15%;
     margin-bottom: 3px;
+    background-color: #33383D;
+    border-color: #ffffff;
+    color: white;
+    font-size: 1rem;
+    padding-left: 5px;  
 }
+input:-webkit-autofill {
+    -webkit-text-fill-color: white;
+    -webkit-box-shadow: 0 0 0px 1000px #33383D inset;
+  }
 
 #emailInput::placeholder {
     padding-left: 10px;
+    color: white;
+    font-size: 1rem;
+}
+
+#senhaLabel {
+    font-size: 1.7rem;
+    color: white;
+    margin-bottom: 5px;
+}
+
+#senhaInput {
+    width: 30%;
+    border-radius: 40px;
+    height: 15%;
+    margin-bottom: 3px;
+    background-color: #33383D;
+    border-color: #ffffff;
+    color: white;
+    font-size: 1rem;
+    padding-left: 5px;
 }
 
 #cpfLabel {
     font-size: 1.7rem;
     color: white;
+    margin-bottom: 5px;
 }
 
 #cpfInput {
-    width: 22%;
-    border-radius: 10px;
+    width: 30%;
+    border-radius: 40px;
     height: 15%;
     margin-bottom: 3px;
+    background-color: #33383D;
+    border-color: #ffffff;
+    color: white;
+    font-size: 1rem;
+    padding-left: 5px;
 }
 
 #cpfInput::placeholder {
     padding-left: 10px;
+    color: white;
+    font-size: 1rem;
 }
 
 #telefoneLabel {
     font-size: 1.7rem;
     color: white;
+    margin-bottom: 5px;
 }
 
 #telefoneInput {
-    width: 22%;
-    border-radius: 10px;
+    width: 30%;
+    border-radius: 40px;
     height: 15%;
     margin-bottom: 3px;
+    background-color: #33383D;
+    border-color: #ffffff;
+    color: white;
+    font-size: 1rem;
+    padding-left: 5px;
 }
 
 #telefoneInput::placeholder {
     padding-left: 10px;
+    color: white;
+    font-size: 1rem;
 }
 
 #enderecoLabel {
     font-size: 1.7rem;
     color: white;
+    margin-bottom: 5px;
 }
 
 #enderecoInput {
-    width: 22%;
-    border-radius: 10px;
+    width: 30%;
+    border-radius: 40px;
     height: 15%;
     margin-bottom: 3px;
+    background-color: #33383D;
+    border-color: #ffffff;
+    color: white;
+    font-size: 1rem;
+    padding-left: 5px;
 }
 
 .avisoTermos{
@@ -118,7 +165,7 @@
 .termosUso {
     margin-block-end: 0;
     margin-block-start: 0;
-    margin-top: 20px;
+    margin-top: 15px;
     font-size: 1.3rem;
     cursor: pointer;
     color: #E9B425;
