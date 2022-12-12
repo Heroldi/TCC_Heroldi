@@ -92,3 +92,7 @@ async function excluir(){
         alert("Ops, algo deu errado, tente novamente");
       }
 }
+
+function redireciona(){
+  location.href = "bemVindoAdmin.html";
+}
