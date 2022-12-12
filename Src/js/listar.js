@@ -69,7 +69,7 @@ listar();
 
 function pegaEmail(e){
 idReq = e.target.parentNode
-idReq = emailReq.children[0].textContent;
+idReq = idReq.children[0].textContent;
 
 openModal('modalBox');
 }
