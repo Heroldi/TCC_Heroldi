@@ -63,7 +63,7 @@ async function excluir() {
       }),
     });
     localStorage.removeItem('id');
-    location.reload();
+    window.location.href = "login.html"
   } catch {
     alert("Ops, algo deu errado, tente novamente");
   }
